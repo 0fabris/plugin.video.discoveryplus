@@ -13,13 +13,12 @@ provider-name="0fabris">
 </extension>
 <extension point="xbmc.addon.metadata">
   <summary lang="it">Plugin per Discovery+</summary>
-  <description lang="it">Plugin per vedere i contenuti Free Live di Discoveryplus.com</description>
+  <description lang="it">Plugin per vedere i contenuti Free in Diretta di Discoveryplus.com</description>
   <disclaimer lang="it">I contenuti appartengono ai rispettivi proprietari, mi dissocio</disclaimer>
   <assets>
     <icon>icon.png</icon>
-    <screenshot>resources\screenshot-01.jpg</screenshot>
-    <screenshot>resources\screenshot-02.jpg</screenshot>
-    <screenshot>resources\screenshot-03.jpg</screenshot>    
+    <screenshot>resources\assets\screen1.png</screenshot>
+    <screenshot>resources\assets\screen2.png</screenshot>
   </assets>
   <news>Release Iniziale</news>
 </extension>
