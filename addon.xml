@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="plugin.video.discoveryplus"
+version="1.0.0"
+name="Discovery+"
+provider-name="0fabris">
+<requires>
+  <import addon="xbmc.python" version="2.25.0"/>
+  <import addon="script.module.requests" version="2.12.4"/>
+  <import addon="script.module.inputstreamhelper" version="0.3.3"/>
+</requires>
+<extension point="xbmc.python.pluginsource" library="main.py">
+  <provides>video</provides>
+</extension>
+<extension point="xbmc.addon.metadata">
+  <summary lang="it">Plugin per Discovery+</summary>
+  <description lang="it">Plugin per vedere i contenuti Free Live di Discoveryplus.com</description>
+  <disclaimer lang="it">I contenuti appartengono ai rispettivi proprietari, mi dissocio</disclaimer>
+  <assets>
+    <icon>icon.png</icon>
+    <screenshot>resources\screenshot-01.jpg</screenshot>
+    <screenshot>resources\screenshot-02.jpg</screenshot>
+    <screenshot>resources\screenshot-03.jpg</screenshot>    
+  </assets>
+  <news>Release Iniziale</news>
+</extension>
+</addon>
