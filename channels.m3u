@@ -1,0 +1,19 @@
+#EXTM3U
+#EXTINF:-1, Motor Trend
+plugin://plugin.video.discoveryplus/?action=play&lib=resources.lib.live&stream_id=19
+#EXTINF:-1, Real Time
+plugin://plugin.video.discoveryplus/?action=play&lib=resources.lib.live&stream_id=2
+#EXTINF:-1, Food Network
+plugin://plugin.video.discoveryplus/?action=play&lib=resources.lib.live&stream_id=21
+#EXTINF:-1, NOVE
+plugin://plugin.video.discoveryplus/?action=play&lib=resources.lib.live&stream_id=3
+#EXTINF:-1, Home and Garden TV
+plugin://plugin.video.discoveryplus/?action=play&lib=resources.lib.live&stream_id=36
+#EXTINF:-1, DMAX
+plugin://plugin.video.discoveryplus/?action=play&lib=resources.lib.live&stream_id=5
+#EXTINF:-1, Giallo
+plugin://plugin.video.discoveryplus/?action=play&lib=resources.lib.live&stream_id=6
+#EXTINF:-1, K2
+plugin://plugin.video.discoveryplus/?action=play&lib=resources.lib.live&stream_id=7
+#EXTINF:-1, Frisbee
+plugin://plugin.video.discoveryplus/?action=play&lib=resources.lib.live&stream_id=8
