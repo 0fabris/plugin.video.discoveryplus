@@ -75,7 +75,6 @@ def list_categories():
     """
     Create the list of video categories in the Kodi interface.
     """
-    xbmcplugin.setPluginCategory(_handle, 'Discovery+')
     xbmcplugin.setContent(_handle, 'videos')
     categories = get_categories()
 
@@ -100,6 +99,32 @@ def list_videos(category):
     """
     xbmcplugin.setContent(_handle, 'videos')
     videos = get_videos(category)
+    is_folder = True
+    for video in videos:
+        is_folder = is_folder and ('path' in video.keys())
+        list_item = xbmcgui.ListItem(label=video['name'])
+        list_item.setInfo('video', {'title': video['name'],
+                                    'genre': video['genre'],
+                                    'mediatype': 'video'})
+        if not is_folder:
+            list_item.setProperty('IsPlayable', 'true')
+            url = get_url(action='play', type="channel", lib=category, stream_id=video["video"])
+        else:
+            list_item.setProperty('IsPlayable', 'false')
+            url = get_url(action='show_serie',lib=category, path=video['path'], seasons=video['series'])
+
+        xbmcplugin.addDirectoryItem(_handle, url, list_item, is_folder)
+    xbmcplugin.addSortMethod(_handle, xbmcplugin.SORT_METHOD_LABEL_IGNORE_THE)
+    xbmcplugin.endOfDirectory(_handle)
+
+def show_serie(lib, s_path, seasonList):
+    '''
+    Function that gets every Free Serie of D+ Catalog
+    '''
+    l = importlib.import_module(lib)
+    videos = l.serie_episodes(s_path)
+
+    is_folder = False
     for video in videos:
         list_item = xbmcgui.ListItem(label=video['name'])
         list_item.setInfo('video', {'title': video['name'],
@@ -107,14 +132,11 @@ def list_videos(category):
                                     'mediatype': 'video'})
 
         list_item.setProperty('IsPlayable', 'true')
-        
-        url = get_url(action='play', lib=category, stream_id=video["video"])
-        
-        is_folder = False
+        url = get_url(action='play', lib=lib, type="video", stream_id=video["video"])
+
         xbmcplugin.addDirectoryItem(_handle, url, list_item, is_folder)
     xbmcplugin.addSortMethod(_handle, xbmcplugin.SORT_METHOD_LABEL_IGNORE_THE)
     xbmcplugin.endOfDirectory(_handle)
-
 
 def play_video(lib, s_id):
     """
@@ -125,7 +147,7 @@ def play_video(lib, s_id):
     """
 
     l = importlib.import_module(lib)
-    xbmcplugin.setResolvedUrl(_handle, True, listitem=l.get_channel(s_id))
+    xbmcplugin.setResolvedUrl(_handle, True, listitem=l.get_video(s_id))
 
 
 def router(paramstring):
@@ -140,6 +162,8 @@ def router(paramstring):
     if params:
         if params['action'] == 'list':
             list_videos(params['lib'])
+        elif params['action'] == 'show_serie':
+            show_serie(params['lib'],params['path'],params['seasons'])
         elif params['action'] == 'play':
             play_video(params["lib"],params['stream_id'])
         else:

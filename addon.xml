@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon id="plugin.video.discoveryplus"
-version="1.0.0"
+version="1.1.0"
 name="Discovery+"
 provider-name="0fabris">
 <requires>
@@ -20,6 +20,6 @@ provider-name="0fabris">
     <screenshot>resources\assets\screen1.png</screenshot>
     <screenshot>resources\assets\screen2.png</screenshot>
   </assets>
-  <news>Release Iniziale</news>
+  <news>Live + VOD Funzionanti</news>
 </extension>
 </addon>

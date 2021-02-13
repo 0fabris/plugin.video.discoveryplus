@@ -4,6 +4,8 @@ Questo e' un plugin per Kodi che permette di visualizzare i canali Live di [Disc
 
 Funziona ma non e' definitivo
 
+Last Update: Add VOD Contents
+
 **Note**: I contenuti visualizzati sono unicamente di proprieta' di Discovery.
 
 **NON SONO GARANTITI AGGIORNAMENTI DEL PLUGIN**
